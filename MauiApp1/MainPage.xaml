@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage">
+
+    <StackLayout>
+        <ContentPage.Background>
+            <Color>#DDDDDD</Color>
+        </ContentPage.Background>
+        
+        <StackLayout>
+            <Entry x:Name="ProductNameEntry" Placeholder="Product Name" />
+            <Entry x:Name="ProductPriceEntry" Placeholder="Price" Keyboard="Numeric" />
+            <Button Text="Add Product" Clicked="AddProductButton_Clicked" />
+        </StackLayout>
+
+        <CollectionView x:Name="ProductsCollectionView">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="4" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Transparent" BackgroundColor="White" CornerRadius="10" Margin="5" WidthRequest="300" HeightRequest="330">
+                        <StackLayout>
+                            <Label Text="{Binding DisplayText}" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black" />
+                            <Button Text="Buy" Command="{Binding TogglePurchaseCommand}" BackgroundColor="MediumPurple" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Delete Product" Clicked="RemoveProductButton_Clicked" />
+    </StackLayout>
+</ContentPage>
