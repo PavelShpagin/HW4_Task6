@@ -10,8 +10,8 @@
         </ContentPage.Background>
         
         <StackLayout>
-            <Entry x:Name="ProductNameEntry" Placeholder="Product Name" />
-            <Entry x:Name="ProductPriceEntry" Placeholder="Price" Keyboard="Numeric" />
+            <Entry x:Name="ProductNameEntry" Placeholder="Product Name" TextColor="Black" />
+            <Entry x:Name="ProductPriceEntry" Placeholder="Price" Keyboard="Numeric" TextColor="Black" />
             <Button Text="Add Product" Clicked="AddProductButton_Clicked" />
         </StackLayout>
 
